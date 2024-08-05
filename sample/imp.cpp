@@ -19,6 +19,7 @@ int A_List:: isFull(){
 		return 0;
 }
 A_List:: ~A_List(){
+		cout << "Cleaning up data." << endl;
 		capacity= 0;
 		size= 0;
 		delete [] arr;
@@ -33,6 +34,17 @@ int A_List:: displayList(){
 	for(int i=0;i<size;i++)
 		cout << arr[i] << " ";
 	cout << endl;
+}
+int A_List:: insertByPos(int pos, int element){
+	if(pos<0 || pos >size+1)
+		return 0;
+	else{
+		for(int i= size+1; i>=pos; i--)
+			arr[i]= arr[i-1];
+		arr[pos]= element;
+		size++;
+		return 1;
+	}
 }
 int A_List:: insertAtFirst(int element){
 		if(!isFull()){
@@ -69,4 +81,7 @@ int A_List:: find(int m){
 		}
 		return -1;
 	}
-
+int A_List:: makeListEmpty(){
+	size=0;
+	return 1;
+}
