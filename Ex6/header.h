@@ -1,27 +1,25 @@
 #include<iostream>
 using namespace std;
 class BSTTreeNode{
+    public:
     int info;
     BSTTreeNode* leftChild;
     BSTTreeNode* rightChild;
-    public:
     BSTTreeNode();
     BSTTreeNode(int);
-    ~BSTTreeNode();
 };
 class BSTTreeADT{
-    BSTTreeNode* root;
     public:
+    BSTTreeNode* root;
     BSTTreeADT();
-    ~BSTTreeADT();
-    void insertion(int);
-    void deletion(int);
-    BSTTreeNode* search(int);
-    BSTTreeNode* findMin();
-    BSTTreeNode* findMax();
-    void makeEmpty();
-    void inorder();
-    void preorder();
-    void postorder();
-    void display();
+    void insertion(BSTTreeNode*&, int);
+    BSTTreeNode* deletion(BSTTreeNode*, int);
+    BSTTreeNode* search(BSTTreeNode*, int);
+    BSTTreeNode* findMin(BSTTreeNode*);
+    BSTTreeNode* findMax(BSTTreeNode*);
+    void makeEmpty(BSTTreeNode*&);
+    void inorder(BSTTreeNode*);
+    void preorder(BSTTreeNode*);
+    void postorder(BSTTreeNode*);
+    void display(BSTTreeNode*);
 };
