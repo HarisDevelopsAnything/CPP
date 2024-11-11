@@ -73,8 +73,7 @@ void Graph::performDFS()
     while (!s.empty()) {
         int vertex = s.top();
         s.pop();
-        cout << vertex << " ";
-
+        cout << vertex << " : " << Data[vertex] << ", ";
         // Visit all unvisited adjacent vertices
         for (int i = 0; i < noOfVertices; i++) {
             if (adjMatrix[vertex][i] == 1 && !visited[i]) {
@@ -103,7 +102,7 @@ void Graph::performBFS()
     while (!q.empty()) {
         int vertex = q.front();
         q.pop();
-        cout << vertex << " ";
+        cout << vertex << " : " << Data[vertex] << ", ";
 
         // Visit all unvisited adjacent vertices
         for (int i = 0; i < noOfVertices; i++) {
@@ -116,7 +115,7 @@ void Graph::performBFS()
     cout << endl;
 }
 
-// Get the data array
+// Get the data arrayu
 int* Graph::getData()
 {
     return Data;
